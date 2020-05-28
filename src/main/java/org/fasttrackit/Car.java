@@ -10,4 +10,7 @@ public class Car {
     double totalTraveledDistance;
     boolean damaged;
     int doorCount;
+
+    //"has-a" relationship (Aggregation)
+    Engine engine;
 }

@@ -12,6 +12,25 @@ public class Vehicle {
     boolean damaged;
 
     public double accelerate ( double speed, double durationInHour) {
+
+        if (speed > maxSpeed) {
+            System.out.println("Max speed exeeded");
+            return 0;
+        }
+//        } else if (speed == maxSpeed){
+//            System.out.println("carefull Max speed reached!");
+//        }
+            else {
+            System.out.println("Valid speed entered.");
+        }
+
+        if (damaged){
+                System.out.println("The vehicle is damaged, you cannot accelerate.");
+                return  0;
+            }
+
+
+
         // EX: Dacia is accelerating with 60km/h for one hour
         System.out.println(make + " is accelerating with " + speed + " km/h for " + durationInHour + " h.");
         double distance = speed * durationInHour;
@@ -20,6 +39,9 @@ public class Vehicle {
 
         // calculate used fuel
         double usedFuel = distance * mileage / 100;
+
+        //todo : use more fuel if speed > 120 km/h
+
         fuelLevel -= usedFuel;
         System.out.println("Remaining fuel: " + fuelLevel);
         return  distance;

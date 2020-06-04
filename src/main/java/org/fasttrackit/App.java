@@ -29,8 +29,12 @@ public class App {
         // stocarea unei metode intr-o variabila:
         // double currentDistance = carReference.accelerate(60,1);
 
+        System.out.println(carReference.totalTraveledDistance);
 
+        Mechanic mechanic = new Mechanic();
+        mechanic.repair(carReference);
 
+        System.out.println(carReference.totalTraveledDistance);
 
 
     }

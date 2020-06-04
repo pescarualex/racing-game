@@ -24,4 +24,9 @@ public class Vehicle {
         System.out.println("Remaining fuel: " + fuelLevel);
         return  distance;
     }
+    // metoda care nu returneaza nimic
+    public void makeSound() {
+        System.out.println("make way");
+    }
+
 }

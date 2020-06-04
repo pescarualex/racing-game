@@ -23,6 +23,14 @@ public class App {
         car2.color = "black";
 
 
+        // Invocarea metodei sau apelarea
+
+        carReference.accelerate(60,1);
+        // stocarea unei metode intr-o variabila:
+        // double currentDistance = carReference.accelerate(60,1);
+
+
+
 
 
     }

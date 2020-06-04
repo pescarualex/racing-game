@@ -33,6 +33,8 @@ public class Vehicle {
 
         // EX: Dacia is accelerating with 60km/h for one hour
         System.out.println(make + " is accelerating with " + speed + " km/h for " + durationInHour + " h.");
+
+        // distance is a local variable
         double distance = speed * durationInHour;
         totalTraveledDistance += distance;
         System.out.println("Total travel distance: " + totalTraveledDistance);

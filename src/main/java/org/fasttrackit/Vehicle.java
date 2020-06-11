@@ -40,28 +40,21 @@ public class Vehicle {
         totalTraveledDistance += distance;
         System.out.println("Total travel distance: " + totalTraveledDistance);
 
+        //use more fuel if speed > 120 km/
+        double mileageMultiplier = 1;
+        if (speed > 120) {
+            mileageMultiplier = speed / 100;
+        }
+
         // calculate used fuel
         double usedFuel = distance * mileage / 100;
 
-        //todo : use more fuel if speed > 120 km/
-
-//        if ( speed > 120) {
-//            System.out.println(mileage);
-//            System.out.println(mileage);
-//            System.out.println(mileage);
-//        }
-
+        usedFuel*= mileageMultiplier;
 
         fuelLevel -= usedFuel;
         System.out.println("Remaining fuel: " + fuelLevel);
         return  distance;
     }
-
-
-//    public static double randomNumber(double min, double max){
-//        mileage = (Math.random()*((max-min)+1))+min;
-//        return mileage;
-//    }
 
     // metoda care nu returneaza nimic
     public void makeSound() {

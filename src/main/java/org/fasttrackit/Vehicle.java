@@ -2,6 +2,7 @@ package org.fasttrackit;
 
 public class Vehicle {
 
+   // private static double mileage;
     String make;
     String model;
     String color;
@@ -12,6 +13,8 @@ public class Vehicle {
     boolean damaged;
 
     public double accelerate ( double speed, double durationInHour) {
+
+
 
         if (speed > maxSpeed) {
             System.out.println("Max speed exeeded");
@@ -29,8 +32,6 @@ public class Vehicle {
                 return  0;
             }
 
-
-
         // EX: Dacia is accelerating with 60km/h for one hour
         System.out.println(make + " is accelerating with " + speed + " km/h for " + durationInHour + " h.");
 
@@ -42,15 +43,33 @@ public class Vehicle {
         // calculate used fuel
         double usedFuel = distance * mileage / 100;
 
-        //todo : use more fuel if speed > 120 km/h
+        //todo : use more fuel if speed > 120 km/
+
+//        if ( speed > 120) {
+//            System.out.println(mileage);
+//            System.out.println(mileage);
+//            System.out.println(mileage);
+//        }
+
 
         fuelLevel -= usedFuel;
         System.out.println("Remaining fuel: " + fuelLevel);
         return  distance;
     }
+
+
+//    public static double randomNumber(double min, double max){
+//        mileage = (Math.random()*((max-min)+1))+min;
+//        return mileage;
+//    }
+
     // metoda care nu returneaza nimic
     public void makeSound() {
         System.out.println("make way");
     }
+
+
+
+
 
 }

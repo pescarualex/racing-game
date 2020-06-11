@@ -7,6 +7,15 @@ public class App {
         game.start();
 
 
+//        // creare constructor
+//        Engine engine = new Engine();
+//        engine.manufacturer = "Renault";
+//           // AutoVehicle autoVehicle = new AutoVehicle(engine);
+//
+//        Car car = new Car(engine);
+//        car.make = "Dacia";
+//        System.out.println(car.make);
+
 
 //        System.out.println("Welcome to the racing game!");
 //

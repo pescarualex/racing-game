@@ -14,7 +14,6 @@ public class Game {
     private int getPlayerCountFromUsers(){
         System.out.println("Please enter number of players: ");
         Scanner scanner = new Scanner(System.in);
-        scanner.nextInt();
         return scanner.nextInt();
 
     }

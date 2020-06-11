@@ -3,7 +3,7 @@ package org.fasttrackit;
 //"is-a" relationship (inheritance)
 public class Car extends AutoVehicle {
 
-    int doorCount;
+    private int doorCount;
 
     //add constructor
     public Car(Engine engine) {
@@ -11,8 +11,12 @@ public class Car extends AutoVehicle {
     }
 
 
+    public int getDoorCount() {
+        return doorCount;
+    }
 
-
-
+    public void setDoorCount(int doorCount) {
+        this.doorCount = doorCount;
+    }
 
 }

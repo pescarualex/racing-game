@@ -1,16 +1,18 @@
 package org.fasttrackit;
 
 
+import org.fasttrackit.cheater.CheatingVehicle;
+
 public class App {
     public static void main( String[] args ){
         Game game = new Game();
         game.start();
 
 //        Vehicle vehicle1 = new Vehicle();
-//       // vehicle1.totalVehicleCount = 1;
+//        vehicle1.totalVehicleCount = 1;
 //
 //        Vehicle vehicle2 = new Vehicle();
-//       // vehicle2.totalVehicleCount = 4;
+//        vehicle2.totalVehicleCount = 4;
 //
 //        System.out.println("Total count from vehicle1: " + vehicle1.totalVehicleCount);
 //        System.out.println("Total count from vehicle1: " + vehicle2.totalVehicleCount);

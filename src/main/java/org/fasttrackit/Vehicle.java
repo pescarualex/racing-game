@@ -21,9 +21,17 @@ public class Vehicle {
         totalVehicleCount++;
     }
 
+
+    // method overloading
+    public double accelerate (double speed) {
+        return accelerate(speed, 1);
+    }
+
+
+
+
+
     public double accelerate (double speed, double durationInHour) {
-
-
 
         if (speed > maxSpeed) {
             System.out.println("Max speed exeeded");
@@ -58,7 +66,7 @@ public class Vehicle {
         // calculate used fuel
         double usedFuel = distance * mileage / 100;
 
-        usedFuel*= mileageMultiplier;
+        usedFuel *= mileageMultiplier;
 
         fuelLevel -= usedFuel;
         System.out.println("Remaining fuel: " + fuelLevel);

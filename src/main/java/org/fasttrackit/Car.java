@@ -23,4 +23,11 @@ public class Car extends AutoVehicle {
         this.doorCount = doorCount;
     }
 
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "doorCount=" + doorCount +
+                "} " + super.toString();
+    }
 }

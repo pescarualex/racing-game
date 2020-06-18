@@ -8,6 +8,8 @@ public class App {
         Game game = new Game();
         game.start();
 
+
+
 //        Vehicle vehicle1 = new Vehicle();
 //        vehicle1.totalVehicleCount = 1;
 //

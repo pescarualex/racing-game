@@ -8,6 +8,25 @@ public class App {
         Game game = new Game();
         game.start();
 
+//        //polymorphism
+//        Vehicle vehicle = new CheatingVehicle();
+//        vehicle.setMake("Cheating vehicle");
+//
+//        // object type determines method implementation
+//        vehicle.accelerate(60, 1);
+//
+//        System.out.println("Accelarate with one param");
+//        vehicle.accelerate(60);
+//
+//
+//        // variable type detremines what methods can be invoked
+//
+//        // type casting
+//        if (vehicle instanceof CheatingVehicle) {
+//            ((CheatingVehicle) vehicle).cheat();
+//        }
+
+
 
 
 //        Vehicle vehicle1 = new Vehicle();

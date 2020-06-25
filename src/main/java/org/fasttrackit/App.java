@@ -1,7 +1,7 @@
 package org.fasttrackit;
 
 
-import org.fasttrackit.cheater.CheatingVehicle;
+import org.fasttrackit.service.Game;
 
 public class App {
     public static void main( String[] args ){

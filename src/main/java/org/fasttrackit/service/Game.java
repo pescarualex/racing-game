@@ -1,31 +1,24 @@
-package org.fasttrackit;
+package org.fasttrackit.service;
 
-import java.util.Scanner;
+import org.fasttrackit.controller.StandardInputController;
+import org.fasttrackit.domain.Track;
 
 public class Game {
 
     private Track[] tracks = new Track[3];
 
-
+    private StandardInputController controller = new StandardInputController();
 
     public  void start(){
         System.out.println("Welcome to the racing game!");
 
-       int playerCount = getPlayerCountFromUsers();
+       int playerCount = controller.getPlayerCountFromUsers();
         System.out.println("Pleyer count : " + playerCount);
 
         initializeTraks();
     }
 
 
-
-
-    private int getPlayerCountFromUsers(){
-        System.out.println("Please enter number of players: ");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
-
-    }
 
     private void initializeTraks() {
         Track track1 = new Track();

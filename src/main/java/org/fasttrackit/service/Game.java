@@ -1,7 +1,9 @@
 package org.fasttrackit.service;
 
 import org.fasttrackit.controller.StandardInputController;
+import org.fasttrackit.domain.Mobile;
 import org.fasttrackit.domain.Track;
+import org.fasttrackit.domain.vehicle.Car;
 import org.fasttrackit.domain.vehicle.Vehicle;
 
 import java.util.*;
@@ -10,14 +12,12 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Game {
 
     private Track[] tracks = new Track[3];
-    private List<Vehicle> competitors = new ArrayList<>();
+    private List<Mobile> competitors = new ArrayList<>();
 
     private StandardInputController controller = new StandardInputController();
 
     public  void start(){
         System.out.println("Welcome to the racing game!");
-
-
 
         initializeTraks();
         Track selectedTrack = getSelectedTrack();
@@ -36,7 +36,7 @@ public class Game {
         for (int i = 1; i <= playerCount; i++) {
             System.out.println("Preparing player " + i + " for the race.");
 
-            Vehicle vehicle = new Vehicle();
+            Vehicle vehicle = new Car();
             vehicle.setMake(controller.getVehicleMakeFromUser());
             vehicle.setFuelLevel(30);
             vehicle.setMaxSpeed(300);
@@ -52,9 +52,9 @@ public class Game {
 
 
         // enhanced for or for-each
-        for (Vehicle competitor : competitors) {
+        for (Mobile competitor : competitors) {
             double speed =  controller.getAccelerationSpeedFromUser();
-            competitor.accelerate(speed);
+            competitor.accelerate(speed,1);
         }
     }
 

@@ -3,10 +3,29 @@ package org.fasttrackit;
 
 import org.fasttrackit.service.Game;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class App {
     public static void main( String[] args ){
         Game game = new Game();
         game.start();
+
+
+        //exemple
+//        List<String> authors = new ArrayList<>();
+//        authors.add("Tolkien");
+//        authors.add("C.S. Lewis");
+//        authors.add("J.K Rowling");
+//        authors.add("Eminescu");
+//
+//
+//        boolean eminescuFavoriteAuthor =  authors.contains("Eminescu");
+
+//        List<String> authors2 = Arrays.asList("test", "test2");
+
+
 
 //        //polymorphism
 //        Vehicle vehicle = new CheatingVehicle();

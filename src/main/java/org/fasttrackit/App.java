@@ -11,6 +11,19 @@ public class App {
         game.start();
 
 
+
+
+//        int[] integers = new int[10];
+//        List<Integer> integersList;
+//        Set<Integer> integerSet;
+//        Map<String, Integer> intigerMap;
+//
+//        //auto-boxing
+//        Integer integer = 1;
+//        //auto-unboxing
+//        int intPrimitive = integer;
+
+
 //        Map<String, String> descriptionTranslation = new HashMap<>();
 //        descriptionTranslation.put("en", "Some description");
 //        descriptionTranslation.put("ro", "o descriere");

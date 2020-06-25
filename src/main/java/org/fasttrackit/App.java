@@ -3,14 +3,27 @@ package org.fasttrackit;
 
 import org.fasttrackit.service.Game;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class App {
     public static void main( String[] args ){
         Game game = new Game();
         game.start();
+
+
+//        // ne da garantia ca avem obiecte unice
+//        Set<String> cities = new HashSet<>();
+//        cities.add("Cluj Napoca");
+//        cities.add("Oradea");
+//        cities.add("Londra");
+//        cities.add("Londra");
+//
+//        System.out.println("Number of unique cities: " + cities.size());
+//        Iterator<String> citiesIterator = cities.iterator();
+//
+//        while (citiesIterator.hasNext()) {
+//            System.out.println(citiesIterator.next());
+//        }
 
 
         //exemple

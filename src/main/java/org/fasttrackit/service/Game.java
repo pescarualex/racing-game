@@ -22,9 +22,11 @@ public class Game {
         initializeTraks();
         Track selectedTrack = getSelectedTrack();
 
-        System.out.println("You have selected; " + getSelectedTrack().getName());
+        System.out.println("You have selected; " + selectedTrack.getName());
 
         initializeCompetitors();
+
+        playOneRound();
 
     }
 
@@ -42,6 +44,17 @@ public class Game {
 
             competitors.add(vehicle);
 
+        }
+    }
+
+    private void playOneRound() {
+        System.out.println("New round");
+
+
+        // enhanced for or for-each
+        for (Vehicle competitor : competitors) {
+            double speed =  controller.getAccelerationSpeedFromUser();
+            competitor.accelerate(speed);
         }
     }
 

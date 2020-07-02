@@ -5,6 +5,7 @@ import org.fasttrackit.domain.Mobile;
 import org.fasttrackit.domain.Track;
 import org.fasttrackit.domain.vehicle.Car;
 import org.fasttrackit.domain.vehicle.Vehicle;
+import org.fasttrackit.exception.InvalidOptionSelectedException;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -16,7 +17,7 @@ public class Game {
 
     private StandardInputController controller = new StandardInputController();
 
-    public  void start(){
+    public  void start() throws InvalidOptionSelectedException {
         System.out.println("Welcome to the racing game!");
 
         initializeTraks();
@@ -58,9 +59,15 @@ public class Game {
         }
     }
 
-    private Track getSelectedTrack() {
-        int optionNumber = controller.getTrackNumberFromUser();
-        return tracks[optionNumber - 1];
+    private Track getSelectedTrack() throws InvalidOptionSelectedException {
+        try {
+            int optionNumber = controller.getTrackNumberFromUser();
+            return tracks[optionNumber - 1];
+        } catch (InputMismatchException e) {
+            throw new RuntimeException("Invalid track number entered.");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new InvalidOptionSelectedException();
+        }
     }
 
 

@@ -20,8 +20,8 @@ public class Game {
         System.out.println("Welcome to the racing game!");
 
         initializeTraks();
-        Track selectedTrack = getSelectedTrack();
 
+        Track selectedTrack = getSelectedTrack();
         System.out.println("You have selected; " + selectedTrack.getName());
 
         initializeCompetitors();

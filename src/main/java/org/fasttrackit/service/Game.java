@@ -2,6 +2,7 @@ package org.fasttrackit.service;
 
 import org.fasttrackit.controller.StandardInputController;
 import org.fasttrackit.domain.Mobile;
+import org.fasttrackit.domain.MobileComparater;
 import org.fasttrackit.domain.Track;
 import org.fasttrackit.domain.vehicle.Car;
 import org.fasttrackit.domain.vehicle.Vehicle;
@@ -34,6 +35,25 @@ public class Game {
             playOneRound();
         }
 
+        if (winnerNotKnown) {
+            System.out.println("Game over. There's no winner");
+        }
+
+        processRankingTable();
+
+    }
+
+
+    private void processRankingTable() {
+        competitors.sort(Collections.reverseOrder(new MobileComparater()));
+
+
+        System.out.println("Rankings: ");
+
+        for (int i = 0; i < competitors.size(); i++) {
+            System.out.println(i + 1 + ". " + competitors.get(i).getName() + ": " + competitors.get(i).getTotalTraveledDistance());
+        }
+
     }
 
     private void initializeCompetitors() {
@@ -54,7 +74,9 @@ public class Game {
     }
 
     private void playOneRound() {
+        System.out.println();
         System.out.println("New round");
+        System.out.println();
 
 
         // enhanced for or for-each
@@ -63,7 +85,7 @@ public class Game {
                 outOfRaceCompetitors.add(competitor);
                 continue;
             }
-
+            System.out.println();
             double speed =  controller.getAccelerationSpeedFromUser();
             competitor.accelerate(speed,1);
 

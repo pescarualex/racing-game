@@ -13,7 +13,11 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Game {
 
     private Track[] tracks = new Track[3];
+    private Track selectedTrack;
     private List<Mobile> competitors = new ArrayList<>();
+    private Set<Mobile> outOfRaceCompetitors = new HashSet<>();
+
+    private boolean winnerNotKnown = true;
 
     private StandardInputController controller = new StandardInputController();
 
@@ -22,12 +26,13 @@ public class Game {
 
         initializeTraks();
 
-        Track selectedTrack = getSelectedTrack();
-        System.out.println("You have selected; " + selectedTrack.getName());
+        selectedTrack = getSelectedTrack();
 
         initializeCompetitors();
 
-        playOneRound();
+        while (winnerNotKnown && outOfRaceCompetitors.size() < competitors.size()) {
+            playOneRound();
+        }
 
     }
 
@@ -54,8 +59,19 @@ public class Game {
 
         // enhanced for or for-each
         for (Mobile competitor : competitors) {
+            if (!competitor.canMove()) {
+                outOfRaceCompetitors.add(competitor);
+                continue;
+            }
+
             double speed =  controller.getAccelerationSpeedFromUser();
             competitor.accelerate(speed,1);
+
+            if (competitor.getTotalTraveledDistance() >= selectedTrack.getLenght()) {
+                System.out.println("Congratz! The winner is: " + competitor.getName());
+                winnerNotKnown = false;
+                break;
+            }
         }
     }
 

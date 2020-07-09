@@ -1,6 +1,9 @@
 package org.fasttrackit;
 
 
+import org.fasttrackit.domain.vehicle.AutoVehicle;
+import org.fasttrackit.domain.vehicle.Car;
+import org.fasttrackit.domain.vehicle.Engine;
 import org.fasttrackit.exception.InvalidOptionSelectedException;
 import org.fasttrackit.service.Game;
 
@@ -104,6 +107,9 @@ public class App {
 //        Car car = new Car(engine);
 //        car.make = "Dacia";
 //        System.out.println(car.make);
+//          Car car = new Car();
+//        Engine engine = new Engine();
+//        Car car2 = new Car(engine);
 
 
 //        System.out.println("Welcome to the racing game!");

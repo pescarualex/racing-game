@@ -1,11 +1,13 @@
 package org.fasttrackit.service;
 
 import org.fasttrackit.controller.StandardInputController;
+import org.fasttrackit.domain.Hulk;
 import org.fasttrackit.domain.Mobile;
 import org.fasttrackit.domain.MobileComparater;
 import org.fasttrackit.domain.Track;
 import org.fasttrackit.domain.vehicle.Car;
 import org.fasttrackit.domain.vehicle.Vehicle;
+import org.fasttrackit.domain.vehicle.cheater.CheatingVehicle;
 import org.fasttrackit.exception.InvalidOptionSelectedException;
 import org.fasttrackit.persistence.FileRankingRepository;
 import org.fasttrackit.persistence.RankingRepository;
@@ -72,14 +74,49 @@ public class Game {
         for (int i = 1; i <= playerCount; i++) {
             System.out.println("Preparing player " + i + " for the race.");
 
-            Vehicle vehicle = new Car();
-            vehicle.setMake(controller.getVehicleMakeFromUser());
-            vehicle.setFuelLevel(30);
-            vehicle.setMaxSpeed(300);
-            vehicle.setMileage(ThreadLocalRandom.current().nextDouble(9,15));
+            createCompatitor();
 
-            competitors.add(vehicle);
+        }
+    }
 
+    private void displayCompetitorTipes() {
+        System.out.println("Please choose how you want to enter the race: ");
+        System.out.println("1.Using the car");
+        System.out.println("2.I feel luky, I'll try Hulk");
+    }
+    private void createCompatitor() {
+        displayCompetitorTipes();
+
+        int competitorType = controller.getCompetitorTypeFromUser();
+
+        switch (competitorType) {
+            case 0:
+                CheatingVehicle mobile = new CheatingVehicle();
+                mobile.setMake(controller.getVehicleMakeFromUser());
+                mobile.setFuelLevel(30);
+                mobile.setMaxSpeed(300);
+                mobile.setMileage(ThreadLocalRandom.current().nextDouble(9,15));
+
+                competitors.add(mobile);
+                break;
+
+            case 1:
+                Car car = new Car();
+                car.setMake(controller.getVehicleMakeFromUser());
+                car.setFuelLevel(30);
+                car.setMaxSpeed(300);
+                car.setMileage(ThreadLocalRandom.current().nextDouble(9,15));
+
+                competitors.add(car);
+                break;
+            case 2:
+                Hulk hulk = new Hulk();
+                competitors.add(hulk);
+                break;
+            default:
+                System.out.println("Invalid value entered");
+                createCompatitor();
+                break;
         }
     }
 
